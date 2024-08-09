@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Cursos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            scroll-snap-type: x mandatory;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel img {
+            width: 300px;
+            margin: 0 10px;
+            scroll-snap-align: start;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .accordion {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .accordion-item {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .accordion-title {
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .accordion-content {
+            padding: 15px;
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const accordionItems = document.querySelectorAll('.accordion-title');
+            accordionItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    const content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            });
+
+            // Carrossel Automático
+            const carouselTrack = document.querySelector('.carousel-track');
+            const images = document.querySelectorAll('.carousel img');
+            let index = 0;
+            const totalImages = images.length;
+
+            function moveCarousel() {
+                index = (index + 1) % totalImages;
+                carouselTrack.style.transform = `translateX(-${index * 320}px)`;
+            }
+
+            setInterval(moveCarousel, 3000); // Muda imagem a cada 3 segundos
+        });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Portal do professor /Especialista / Consultor</h1>
+        <p>Acesso a Conteúdos e Ferramentas de Desenvolvimento de Cosultoria<br> Oportunidades de Crescimento com Recorrência e Escala</p>
+    </header>
+
+    <section class="carousel">
+        <div class="carousel-track">
+            <a href="#introducao"><img src="https://via.placeholder.com/300x200?text=Introdução" alt="Introdução"></a>
+            <a href="https://exemplo.com/curso1"><img src="https://via.placeholder.com/300x200?text=Curso+1" alt="Curso 1"></a>
+            <a href="https://exemplo.com/curso2"><img src="https://via.placeholder.com/300x200?text=Curso+2" alt="Curso 2"></a>
+            <a href="https://exemplo.com/curso3"><img src="https://via.placeholder.com/300x200?text=Curso+3" alt="Curso 3"></a>
+            <a href="https://exemplo.com/curso4"><img src="https://via.placeholder.com/300x200?text=Curso+4" alt="Curso 4"></a>
+            <a href="#proposta"><img src="https://via.placeholder.com/300x200?text=Proposta+de+Parceria" alt="Proposta de Parceria"></a>
+        </div>
+    </section>
+
+    <section class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-title" id="introducao">Introdução</div>
+            <div class="accordion-content">
+                <p>Bem-vindo ao Portal do Professor/Especialista/Consultor. Esta plataforma foi desenvolvida para oferecer a você recursos e oportunidades para aprimorar suas habilidades e expandir sua carreira. Através de Aprendizados, Treinamentos e Cursos (ATC), ferramentas, networking, e parcerias estratégicas.
+
+<br><br> Estamos focados em apoiar seu crescimento profissional, bem como de seus clientes.</p>
+                <p>Vamos conhecer o seu portal ATC e ferramentas disponíveis no modelo de negócio replicável e esclável para ajudarmos você a alcançar seus objetivos profissionais.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-title">Acesso ao Portal</div>
+            <div class="accordion-content">
+                <p>Exemplo demonstrativo de acesso 24/7 à plataforma.<br>
+           
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/FkjicgM_xis?si=Xep_5pOQ8tn3s8bF&amp;clip=UgkxP4sUWMTCp5tzqnUsbSCU32yChIRD_26h&amp;clipt=EMqwFxjMkhk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  <br><br>
+
+               <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/FkjicgM_xis?si=LvGJiApLEfF51PMk&amp;clip=UgkxZjm7kPBRd4ks6zVsaKU4AGWcoL0mtk5r&amp;clipt=EI68Ghi14Rw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+            </div>
+ 
+
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-title">Conteúdos ATC e Adicionais</div>
+            <div class="accordion-content">
+                <p>VIsualização interna do portal com o curso escolhido para acompanhamento periódico personalizado. Adicione ATCs associados e complementares.</p>
+               
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/cSvWjrYx9w0?si=0lLv-F5UOP0YkZcb&amp;clip=UgkxhzMg2X8yINk7g04i-PCKnJSZIQQLX6SQ&amp;clipt=EKnKjAIYiZ-QAg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  <p>Estrutura de áreas de acesso<br>Assistência no embarque de cpfs<br>Designação de conteúdo de apoio .</p>
+ <ul>
+                    <li>Principal + Upsell 1 e 2</li>
+                    <li>Cross-sell: Outras áreas de interesse</li>
+                </ul>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-title">Planos Cliente Final</div>
+            <div class="accordion-content">
+                <p>Intervalo de 21 dias - Sessão de 1h15 = R$ 288 - mensalidade</p>
+                <p>Intervalo de 14 dias - Sessão de 1h15 = R$ 480 - mensalidade</p>
+                <p>Intervalo de 7 dias - Sessão de 1h15 = R$ 645 - mensalidade</p>
+                <p>Parceiro Assessoria - acompanhamento - CONSULTAR CRITÉRIOS DE OBJETIVOS E SINERGIA</p>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-title">Licenciamento Adaptativo<br> Parceiro / Cliente(s) com Personalização de Portal de  Acesso</div>
+
+
+
+                <div class="accordion-content">
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cSvWjrYx9w0?si=-81r7UJ50U0t91N0&clip=UgkxpgjsLPiFKzc2vNy-Dym9Xfjo0zi01OYg&clipt=EPyNEhi0gxU " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>Portal de Acesso personalizado - plataforma white label com os conteúdos prontos e disponíveis para apoio da sua assessoria consultiva periódica:</p>
+                    <ul>
+                        <li>Inclui Portal de Acesso personalizado<br>Acesso a trilhas - 4 cursos da área<br>Acompanhamento FNW Assessoria quinzenal</li>
+                        <p>R$ 840 - R$ 1280</p>
+                        <li>Inclui Portal de Acesso personalizado<br>Acesso aos cursos relacionados à área de interesse</li>
+                        <p>R$ 1280 - R$ 2680</p>
+                        <li>Inclui Portal de Acesso personalizado<br>Acesso aos cursos relacionados à área de interesse e seus relativos em trilhas sequenciais</li>
+                        <p>R$ 2680 - R$ 3720</p>
+                        <li>Inclui Portal de Acesso personalizado<br>Acesso a todos os cursos da plataforma</li>
+                        <p>R$ 3720 - R$ 5500</p>
+                    </ul>
+                    <p>Todos os planos incluem até 16 CPFs embarcados<br>Inclusão de 4 por semana</p>
+                    <p>Inclusão de CPF adicional para qualquer plano<br>R$ 197</p>
+                    <ul>
+                        <li>Licenciamento opcional de plataforma white label, permitindo personalização e branding próprios.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-title" id="proposta">Proposta de Parceria (WIP)</div>
+            <div class="accordion-content">
+                <h3>Nível 1: Parceiro Associado</h3>
+                <p><strong>Benefícios:</strong></p>
+                <ul>
+                    <li>Acesso exclusivo ao portal com conteúdo educacional de ponta.</li>
+                    <li>Participação em eventos de networking trimestrais para aumentar a visibilidade no mercado.</li>
+                    <li>Desconto de 10% em todos os cursos adicionais oferecidos na plataforma.</li>
+                </ul>
+                <p><strong>Requisitos:</strong></p>
+                <ul>
+                    <li>Compartilhamento de conteúdo e eventos da plataforma em suas redes sociais e canais de comunicação.</li>
+                    <li>Referir pelo menos 2 novos usuários ou parceiros para a plataforma por trimestre.</li>
+                </ul>
+                <h3>Nível 2: Parceiro Premium</h3>
+                <p><strong>Benefícios:</strong></p>
+                <ul>
+                    <li>Todos os benefícios do nível Associado.</li>
+                    <li>Branding conjunto em campanhas de marketing selecionadas.</li>
+                    <li>Acesso antecipado a novos cursos e materiais exclusivos.</li>
+                    <li>Sessão de mentoria mensal gratuita com especialistas da plataforma.</li>
+                </ul>
+                <p><strong>Requisitos:</strong></p>
+                <ul>
+                    <li>Compromisso de apresentar feedback regular para a melhoria contínua da plataforma.</li>
+                    <li>Organizar um webinar ou evento colaborativo anual com a plataforma.</li>
+                </ul>
+                <h3>Nível 3: Parceiro Estratégico</h3>
+                <p><strong>Benefícios:</strong></p>
+                <ul>
+                    <li>Todos os benefícios dos níveis Associado e Premium.</li>
+                    <li>Licenciamento opcional de plataforma white label, permitindo personalização e branding próprios.</li>
+                    <li>Receitas compartilhadas de cursos vendidos através de suas redes.</li>
+                    <li>Consultoria estratégica personalizada trimestral para otimizar o uso da plataforma.</li>
+                </ul>
+                <p><strong>Requisitos:</strong></p>
+                <ul>
+                    <li>Investimento mínimo em publicidade da plataforma de cursos.</li>
+                    <li>Desenvolvimento de um plano de ação anual conjunto para promover o crescimento mútuo.</li>
+                </ul>
+                <p>Para mais informações sobre a parceria ou para discutir opções de personalização, entre em contato conosco através do e-mail <a href="mailto:email@exemplo.com">email@exemplo.com</a> ou telefone (XX) XXXX-XXXX.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Plataforma de Cursos. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
